@@ -3,53 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GANG | GAMES - استوديو لتطوير الألعاب والتطبيقات</title>
+<title>GANG | GAMES</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Tahoma,sans-serif; }
-body { background:#0a1a33; color:#fff; line-height:1.7; }
-a { text-decoration:none; color:inherit; }
-header { display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background:#0a1a33; position:sticky; top:0; z-index:100; border-bottom:1px solid #1e3a5f; }
-.logo { display:flex; align-items:center; gap:10px; font-weight:900; font-size:20px; }
-.logo span { color:#1e9ef3; }
-.logo-img { width:52px; height:52px; border-radius:12px; object-fit:cover; }
-nav { display:flex; gap:18px; font-size:15px; }
-.menu-btn { display:none; background:#122a4d; border:1px solid #1e3a5f; color:#fff; padding:8px 14px; border-radius:10px; font-size:20px; cursor:pointer; }
-.container { max-width:800px; margin:auto; padding:20px; }
-.badge { color:#1e9ef3; font-weight:800; letter-spacing:2px; font-size:13px; text-align:center; }
-h1 { font-size:34px; text-align:center; margin:10px 0 15px; }
-h1 .blue { color:#1e9ef3; }
-h2 { font-size:28px; text-align:center; margin-bottom:10px; }
-p.center { text-align:center; opacity:.85; margin-bottom:25px; }
-.btn { display:block; width:100%; padding:16px; border-radius:14px; text-align:center; font-weight:800; font-size:17px; margin-bottom:12px; border:2px solid transparent; cursor:pointer; }
-.btn-primary { background:#1e6ef3; color:#fff; }
-.btn-outline { background:transparent; border-color:#1e9ef3; color:#fff; }
-.card { background:#122a4d; border-radius:20px; padding:22px; margin:25px 0; border:1px solid #1e3a5f; }
-.hero-logo { width:100%; max-width:420px; margin:0 auto 15px; border-radius:20px; overflow:hidden; display:block; }
-.tag { background:#1e6ef3; color:#fff; padding:5px 14px; border-radius:8px; font-size:14px; font-weight:700; display:inline-block; }
-.feature { background:#0a1a33; padding:14px 16px; border-radius:12px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; font-size:17px; }
-.feature span { color:#1e9ef3; font-size:20px; }
-.date-box { background:#0a1a33; border:1px dashed #1e9ef3; padding:15px; border-radius:12px; text-align:center; margin:15px 0; font-weight:800; }
-.date-box small { display:block; opacity:.7; font-weight:400; margin-top:4px; }
-input[type=email] { width:100%; padding:16px; border-radius:12px; border:1px solid #1e3a5f; background:#0a1a33; color:#fff; text-align:center; font-size:16px; margin-bottom:12px; outline:none; }
-.contact-item { background:#122a4d; border:1px solid #1e3a5f; border-radius:16px; padding:18px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; }
-.contact-item small { display:block; opacity:.7; }
-.qr-box { background:#fff; width:230px; height:230px; margin:15px auto; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; padding:8px; }
-.qr-box img { width:100%; height:100%; object-fit:contain; }
-footer { text-align:center; padding:30px 20px; border-top:1px solid #1e3a5f; margin-top:30px; }
-footer .footer-logo { width:80px; height:80px; border-radius:16px; object-fit:cover; margin:0 auto 10px; display:block; }
-@media(max-width:600px){ nav{ display:none; } nav.open{ display:flex; flex-direction:column; position:absolute; top:70px; right:0; left:0; background:#0a1a33; padding:20px; border-bottom:1px solid #1e3a5f; } .menu-btn{ display:block; } h1{ font-size:28px; } }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Tahoma,sans-serif}
+body{background:#0a1a33;color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#0a1a33;border-bottom:1px solid #1e3a5f;position:sticky;top:0}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:20px;direction:ltr}
+.logo span{color:#1e9ef3}
+.logo img{width:48px;height:48px;border-radius:10px;object-fit:cover;background:#000}
+nav{display:flex;gap:14px}
+.menu-btn{display:none;background:#122a4d;border:1px solid #1e3a5f;color:#fff;padding:8px 14px;border-radius:10px;font-size:20px}
+.wrap{max-width:800px;margin:auto;padding:20px}
+.badge{color:#1e9ef3;font-weight:800;text-align:center;letter-spacing:2px;font-size:13px}
+h1{font-size:32px;text-align:center;margin:12px 0}
+h1 b{color:#1e9ef3}
+h2{font-size:26px;text-align:center;margin:10px 0}
+p.c{text-align:center;opacity:.85;margin-bottom:20px}
+.btn{display:block;width:100%;padding:16px;border-radius:14px;text-align:center;font-weight:800;font-size:17px;margin-bottom:12px}
+.b1{background:#1e6ef3;color:#fff}
+.b2{border:2px solid #1e9ef3;color:#fff}
+.card{background:#122a4d;border:1px solid #1e3a5f;border-radius:20px;padding:20px;margin:22px 0}
+.hero{width:100%;border-radius:18px;display:block}
+.qr{background:#fff;width:230px;height:230px;margin:15px auto;border-radius:14px;padding:8px}
+.qr img{width:100%;height:100%;object-fit:contain}
+.feat{background:#0a1a33;padding:14px;border-radius:12px;margin-bottom:10px;display:flex;justify-content:space-between}
+.item{background:#122a4d;border:1px solid #1e3a5f;border-radius:16px;padding:16px;margin-bottom:12px;display:flex;justify-content:space-between}
+.item small{display:block;opacity:.7}
+input{width:100%;padding:16px;border-radius:12px;border:1px solid #1e3a5f;background:#0a1a33;color:#fff;text-align:center;margin-bottom:12px}
+footer{text-align:center;padding:25px;border-top:1px solid #1e3a5f}
+footer img{width:70px;height:70px;border-radius:14px;object-fit:cover;margin:0 auto 10px;display:block}
+@media(max-width:600px){nav{display:none}nav.open{display:flex;flex-direction:column;position:absolute;top:68px;right:0;left:0;background:#0a1a33;padding:20px}.menu-btn{display:block}h1{font-size:27px}}
 </style>
 </head>
 <body>
 <header>
-  <button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-  <div class="logo"><img src="logo.png" class="logo-img" alt="GANG GAMES"> GANG <span>GAMES</span></div>
-  <nav>
-    <a href="#home">الرئيسية</a>
-    <a href="#games">ألعابنا</a>
-    <a href="#coming">قريباً</a>
-    <a href="#contact">تواصل معنا</a>
-  </nav>
+<button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<div class="logo"><img src="logo.png" alt="GG"> GANG <span>GAMES</span></div>
+<nav><a href="#home">الرئيسية</a><a href="#games">ألعابنا</a><a href="#coming">قريباً</a><a href="#contact">تواصل</a></nav>
 </header>
-<div class="container" id="home">
-  <div class="badge">GAME DEVELOPMENT STUDIO
+<div class="wrap" id="home">
+<div class="badge">GAME DEVELOPMENT STUDIO</div>
+<h1>نصنع ألعاباً وتطبيقات <b>للجميع</b></h1>
+<p class="c">GANG GAMES استوديو لتطوير الألعاب والتطبيقات، نبني تجارب سلسة تعمل على الهاتف والكمبيوتر والتلفزيون.</p>
+<a class="btn b1" href="#games">🎮 استكشف ألعابنا</a>
+<a class="btn b2" href="#coming">Muslim Search قريباً</a>
+<div class="card" style="text-align:center">
+<img src="logo.png" class="hero" alt="GANG GAMES">
+<p style="margin-top:12px;opacity:.8">استوديو سوداني، بأفكار عالمية.</p>
+</div>
+<div id="games"><div class="badge">OUR GAMES</div><h2>ألعابنا</h2><div class="card"><p class="c" style="margin:0">ألعابنا الجديدة قيد التطوير، ترقبوا قريباً!</p></div></div>
+<div id="coming"><div class="badge">COMING SOON</div><h2>قريباً</h2><div class="card">
+<h2>Muslim Search</h2><p class="c">تطبيق إسلامي شامل يجمع كل ما تحتاجه في مكان واحد:</p>
+<div class="feat">🕐 أوقات الصلاة <span>◷</span></div>
+<div class="feat">📖 القرآن الكريم <span>📖</span></div>
+<div class="feat">✨ الأذكار <span>✦</span></div>
+<div class="feat">📅 التقويم الهجري <span>📅</span></div>
+<p class="c" style="border:1px dashed #1e9ef3;padding:12px;border-radius:12px">📱 للهواتف: 25.11.2026 - Android</p>
+<form onsubmit="alert('شكرا! سنعلمك عند الاطلاق.');return false"><input type="email" placeholder="اكتب إيميلك هنا" required><button class="btn b1" type="submit">🔔 أعلمني عند الإطلاق</button></form>
+</div></div>
+<div id="contact"><div class="badge">CONTACT</div><h2>تواصل معنا</h2>
+<div class="item"><div><small>البريد الإلكتروني</small><b>gangegame666@gmail.com</b></div><span>✉️</span></div>
+<div class="item"><div><small>قناة يوتيوب</small><b>@GANGGameStudio</b></div><span>▶️</span></div>
+<div class="item"><div><small>الموقع الإلكتروني</small><b>ganggame.netlify.app</b></div><span>🌐</span></div>
+<div class="card" style="text-align:center"><div class="qr"><img src="qr.png" alt="QR"></div><h3>قناتنا على واتساب</h3><p class="c">امسح الكود بتلفونك عشان تدخل قناة GANG GAMES على واتساب.</p><a class="btn b1" href="#">📱 تابع القناة على واتساب</a></div>
+</div>
+</div>
+<footer><img src="logo.png" alt="Logo"><div style="font-weight:900">GANG <span style="color:#1e9ef3">GAMES</span></div><p style="opacity:.7;margin-top:10px">جميع الحقوق محفوظة © GANG GAMES 2026</p></
