@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GANG | GAMES - استوديو لتطوير الألعاب والتطبيقات</title>
-<meta name="description" content="GANG GAMES استوديو سوداني لتطوير الألعاب والتطبيقات. قريباً Muslim Search.">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Tahoma,sans-serif; }
 body { background:#0a1a33; color:#fff; line-height:1.7; }
@@ -14,7 +13,6 @@ header { display:flex; justify-content:space-between; align-items:center; paddin
 .logo span { color:#1e9ef3; }
 .logo-box { width:48px; height:48px; background:#1e9ef3; color:#0a1a33; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:22px; border-radius:12px; }
 nav { display:flex; gap:18px; font-size:15px; }
-nav a:hover { color:#1e9ef3; }
 .menu-btn { display:none; background:#122a4d; border:1px solid #1e3a5f; color:#fff; padding:8px 14px; border-radius:10px; font-size:20px; cursor:pointer; }
 .container { max-width:800px; margin:auto; padding:20px; }
 .badge { color:#1e9ef3; font-weight:800; letter-spacing:2px; font-size:13px; text-align:center; }
@@ -35,10 +33,9 @@ p.center { text-align:center; opacity:.85; margin-bottom:25px; }
 .date-box { background:#0a1a33; border:1px dashed #1e9ef3; padding:15px; border-radius:12px; text-align:center; margin:15px 0; font-weight:800; }
 .date-box small { display:block; opacity:.7; font-weight:400; margin-top:4px; }
 input[type=email] { width:100%; padding:16px; border-radius:12px; border:1px solid #1e3a5f; background:#0a1a33; color:#fff; text-align:center; font-size:16px; margin-bottom:12px; outline:none; }
-input[type=email]::placeholder { color:#7a8aa0; }
 .contact-item { background:#122a4d; border:1px solid #1e3a5f; border-radius:16px; padding:18px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; }
 .contact-item small { display:block; opacity:.7; }
-.qr-box { background:#fff; width:220px; height:220px; margin:15px auto; border-radius:14px; display:flex; align-items:center; justify-content:center; color:#000; font-weight:800; text-align:center; padding:10px; }
+.qr-box { background:#fff; width:230px; height:230px; margin:15px auto; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; padding:8px; }
 .qr-box img { width:100%; height:100%; object-fit:contain; }
 footer { text-align:center; padding:30px 20px; border-top:1px solid #1e3a5f; margin-top:30px; }
 footer .social { display:flex; gap:12px; justify-content:center; margin-top:15px; }
@@ -47,7 +44,6 @@ footer .social a { width:48px; height:48px; background:#122a4d; border-radius:12
 </style>
 </head>
 <body>
-
 <header>
   <button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
   <div class="logo">GANG <span>GAMES</span> <div class="logo-box">GG</div></div>
@@ -56,32 +52,24 @@ footer .social a { width:48px; height:48px; background:#122a4d; border-radius:12
     <a href="#games">ألعابنا</a>
     <a href="#coming">قريباً</a>
     <a href="#contact">تواصل معنا</a>
-    <a href="https://www.youtube.com/@GANGGameStudio" target="_blank">يوتيوب</a>
   </nav>
 </header>
-
 <div class="container" id="home">
   <div class="badge">GAME DEVELOPMENT STUDIO</div>
   <h1>نصنع ألعاباً وتطبيقات <span class="blue">للجميع</span></h1>
   <p class="center">GANG GAMES أستوديو لتطوير الألعاب والتطبيقات، نبني تجارب سلسة تعمل على الهاتف والكمبيوتر والتلفزيون.</p>
   <a class="btn btn-primary" href="#games">🎮 استكشف ألعابنا</a>
   <a class="btn btn-outline" href="#coming">Muslim Search قريباً</a>
-
   <div class="card" style="text-align:center;">
     <div class="app-icon"><div style="font-size:70px; font-weight:900;">GG</div></div>
     <div class="badge">GANG | GAMES</div>
     <p style="margin-top:10px; opacity:.8;">استوديو سوداني، بأفكار عالمية.</p>
   </div>
-
   <div id="games">
     <div class="badge">OUR GAMES</div>
     <h2>ألعابنا</h2>
-    <div class="card">
-      <p class="center" style="margin:0;">ألعابنا الجديدة قيد التطوير، ترقبوا قريباً!</p>
-      <p class="center" style="margin:10px 0 0; font-size:14px; opacity:.6;">تابع قناة الواتساب لتصلك أول إشعار عند الإطلاق.</p>
-    </div>
+    <div class="card"><p class="center" style="margin:0;">ألعابنا الجديدة قيد التطوير، ترقبوا قريباً!</p></div>
   </div>
-
   <div id="coming">
     <div class="badge">COMING SOON</div>
     <h2>قريباً</h2>
@@ -94,18 +82,13 @@ footer .social a { width:48px; height:48px; background:#122a4d; border-radius:12
       <div class="feature">📖 القرآن الكريم <span>📖</span></div>
       <div class="feature">✨ الأذكار <span>✦</span></div>
       <div class="feature">📅 التقويم الهجري <span>📅</span></div>
-      <div class="date-box">
-        📱 للهواتف: 25.11.2026 - Android
-        <small>Android TV: سيتم الإعلان عنه لاحقاً</small>
-      </div>
-      <p class="center">سيعمل التطبيق على الهاتف والتلفزيون، ونسخة التلفزيون قيد التطوير الآن.</p>
+      <div class="date-box">📱 للهواتف: 25.11.2026 - Android<small>Android TV: سيتم الإعلان عنه لاحقاً</small></div>
       <form onsubmit="alert('شكراً! سنعلمك عند الإطلاق.'); return false;">
         <input type="email" placeholder="اكتب إيميلك هنا" required>
         <button class="btn btn-primary" type="submit">🔔 أعلمني عند الإطلاق</button>
       </form>
     </div>
   </div>
-
   <div id="contact">
     <div class="badge">CONTACT</div>
     <h2>تواصل معنا</h2>
@@ -113,24 +96,16 @@ footer .social a { width:48px; height:48px; background:#122a4d; border-radius:12
     <div class="contact-item"><div><small>قناة يوتيوب</small><strong>@GANGGameStudio</strong></div><span style="font-size:24px;">▶️</span></div>
     <div class="contact-item"><div><small>الموقع الإلكتروني</small><strong>ganggame.netlify.app</strong></div><span style="font-size:24px;">🌐</span></div>
     <div class="card" style="text-align:center;">
-      <div class="qr-box">QR الواتساب</div>
+      <div class="qr-box"><img src="qr.png" alt="QR WhatsApp"></div>
       <h3>قناتنا على واتساب</h3>
-      <p class="center">تابع قناة GANG GAMES على واتساب لتصلك آخر أخبار الألعاب وموعد إطلاق Muslim Search.</p>
+      <p class="center">امسح الكود بتلفونك عشان تدخل قناة GANG GAMES على واتساب، وتوصلك آخر أخبار الألعاب وموعد إطلاق Muslim Search.</p>
       <a class="btn btn-primary" href="#" target="_blank">📱 تابع القناة على واتساب</a>
     </div>
   </div>
 </div>
-
 <footer>
   <div class="logo" style="justify-content:center;">GANG <span>GAMES</span> <div class="logo-box">GG</div></div>
   <p style="margin-top:12px; opacity:.7;">جميع الحقوق محفوظة © GANG GAMES 2026</p>
-  <div class="social">
-    <a href="mailto:gangegame666@gmail.com">✉️</a>
-    <a href="https://www.youtube.com/@GANGGameStudio" target="_blank">▶️</a>
-    <a href="#" target="_blank">📱</a>
-  </div>
-  <p style="margin-top:15px; font-size:13px; opacity:.6;">يوتيوب: https://www.youtube.com/@GANGGameStudio<br>الموقع: https://ganggame.netlify.app</p>
 </footer>
-
 </body>
 </html>
