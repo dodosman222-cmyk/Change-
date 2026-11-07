@@ -20,11 +20,9 @@ nav a:focus, nav a:hover{background:#fff;color:#065232;outline:3px solid #fff}
 .menu-btn{display:none;background:#065232;border:2px solid #fff;color:#fff;padding:8px 14px;font-size:22px;border-radius:10px;cursor:pointer}
 .wrap{max-width:800px;margin:auto;padding:20px;background:#065232}
 .badge{color:#fff;font-weight:800;text-align:center;letter-spacing:3px;font-size:13px;opacity:.75;font-family:'Montserrat',sans-serif}
-/* العناوين فقط أندلسي */
 h1{font-size:48px;text-align:center;margin:14px 0;line-height:1.5;font-family:'Amiri',serif;font-weight:700}
 h2{font-size:36px;text-align:center;margin:12px 0;font-family:'Amiri',serif;font-weight:700;line-height:1.5}
 h3{font-family:'Amiri',serif;font-weight:700;font-size:28px;line-height:1.5}
-/* النصوص Cairo */
 p.c{text-align:center;opacity:.92;margin-bottom:20px;line-height:1.9;font-size:17.5px;font-weight:600;font-family:'Cairo',sans-serif}
 .btn{display:block;width:100%;padding:17px;border-radius:16px;text-align:center;font-weight:800;font-size:18px;margin-bottom:12px;text-decoration:none;border:none;cursor:pointer;font-family:'Cairo',sans-serif;letter-spacing:.3px}
 .btn:focus{outline:4px solid #fff;outline-offset:3px}
@@ -35,17 +33,18 @@ p.c{text-align:center;opacity:.92;margin-bottom:20px;line-height:1.9;font-size:1
 .qr{background:#fff;width:230px;height:230px;margin:15px auto;padding:8px;border-radius:16px}
 .qr img{width:100%;height:100%;object-fit:contain}
 .feat{background:#0a7a4a;padding:15px 18px;border-radius:14px;margin-bottom:10px;display:flex;justify-content:space-between;font-family:'Cairo',sans-serif;font-weight:800;font-size:18px}
-.item{background:#0a7a4a;border-radius:16px;padding:17px 18px;margin-bottom:12px;display:flex;justify-content:space-between;font-family:'Cairo',sans-serif}
+.item{background:#0a7a4a;border-radius:16px;padding:17px 18px;margin-bottom:12px;display:flex;justify-content:space-between;font-family:'Cairo',sans-serif;align-items:center}
 .item small{display:block;opacity:.75;font-size:13px;font-weight:600}
 .item b{font-size:16.5px;font-weight:800}
+/* أيقونة مسلم سيرش */
+.app-icon{width:110px;height:110px;object-fit:cover;border-radius:28px;display:block;margin:0 auto 14px;border:2px solid #fff}
+.app-icon-small{width:64px;height:64px;object-fit:cover;border-radius:18px;flex-shrink:0}
 input{width:100%;padding:17px;border-radius:14px;border:none;background:#fff;color:#065232;text-align:center;margin-bottom:12px;font-family:'Cairo',sans-serif;font-size:16.5px;font-weight:700}
 input:focus{outline:4px solid #fff;outline-offset:2px}
 footer{text-align:center;padding:25px;background:#065232}
 footer img{width:80px;height:80px;object-fit:cover;margin:0 auto 10px;display:block;background:#065232}
 footer div{font-size:20px;letter-spacing:.5px;font-family:'Montserrat',sans-serif;font-weight:900}
-/* زخرفة أندلسية خفيفة تحت العناوين فقط */
 h1:after, h2:after{content:"✦ ─── ✦";display:block;font-size:15px;opacity:.55;margin-top:4px;letter-spacing:4px;font-family:'Cairo',sans-serif;font-weight:400}
-/* وضع التلفزيون - لكل التلفزيونات */
 @media (min-width:1200px), (min-width:1024px) and (min-height:600px){
   .wrap{max-width:1100px}
   h1{font-size:60px}
@@ -57,6 +56,7 @@ h1:after, h2:after{content:"✦ ─── ✦";display:block;font-size:15px;opac
   .logo img{width:70px;height:70px}
   nav a{font-size:20px}
   .qr{width:280px;height:280px}
+  .app-icon{width:150px;height:150px}
 }
 *{text-shadow:none !important;box-shadow:none !important;animation:none !important;transition:none !important}
 @media(max-width:600px){nav{display:none}nav.open{display:flex;flex-direction:column;position:absolute;top:68px;right:0;left:0;background:#065232;padding:20px}.menu-btn{display:block}h1{font-size:38px}}
@@ -78,15 +78,20 @@ h1:after, h2:after{content:"✦ ─── ✦";display:block;font-size:15px;opac
 <img src="logo.png" class="hero" alt="Muslim Apps">
 <p style="margin-top:12px;opacity:.9">تطبيقات لخدمة المسلمين في كل مكان.</p>
 </div>
-<div id="apps"><div class="badge">OUR APPS</div><h2>تطبيقاتنا</h2><div class="card"><p class="c" style="margin:0">تطبيقاتنا الجديدة قيد التطوير، ترقبوا قريباً!</p></div></div>
+<div id="apps"><div class="badge">OUR APPS</div><h2>تطبيقاتنا</h2>
+<div class="card">
+<div class="item"><div style="display:flex;gap:14px;align-items:center"><img src="muslim-search.png" class="app-icon-small" alt="Muslim Search"><div><b>Muslim Search</b><small>تطبيق إسلامي شامل - قريباً 25.11.2026</small></div></div><span style="font-size:22px">›</span></div>
+<p class="c" style="margin:0">تطبيقاتنا الجديدة قيد التطوير، ترقبوا قريباً!</p>
+</div></div>
 <div id="coming"><div class="badge">COMING SOON</div><h2>قريباً</h2><div class="card">
+<img src="muslim-search.png" class="app-icon" alt="Muslim Search">
 <h2> Muslim Search</h2><p class="c">تطبيق إسلامي شامل يجمع كل ما تحتاجه في مكان واحد:</p>
 <div class="feat"> أوقات الصلاة <span></span></div>
 <div class="feat"> القرآن الكريم <span></span></div>
 <div class="feat"> الأذكار <span></span></div>
 <div class="feat"> التقويم الهجري <span></span></div>
 <p class="c" style="background:#0a7a4a;padding:12px;border-radius:12px"> للهواتف: 25.11.2026 - Android</p>
-<form onsubmit="alert('شكرا! سنعلمك عند الاطلاق.');return false"><input type="email" placeholder="الرجاء كتابة البريد الإلكتروني هنا" required><button class="btn b1" type="submit"> أعلمني عند الإطلاق</button></form>
+<form onsubmit="alert('شكرا! سنعلمك عند الاطلاق.');return false"><input type="email" placeholder="الرجاء كتابةالبريد الإلكتروني في هذا الفراغ" required><button class="btn b1" type="submit"> أعلمني عند الإطلاق</button></form>
 </div></div>
 <div id="contact"><div class="badge">CONTACT</div><h2>تواصل معنا</h2>
 <div class="item"><div><small>البريد الإلكتروني</small><b>gangegame666@gmail.com</b></div><span></span></div>
