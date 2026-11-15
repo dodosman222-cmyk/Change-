@@ -44,7 +44,6 @@ footer{text-align:center;padding:25px;background:#065232}
 footer img{width:80px;height:80px;object-fit:cover;margin:0 auto 10px;display:block;background:#065232}
 footer div{font-size:20px;letter-spacing:.5px;font-family:'Montserrat',sans-serif;font-weight:900}
 h1:after, h2:after{content:"✦ ─── ✦";display:block;font-size:15px;opacity:.55;margin-top:4px;letter-spacing:4px;font-family:'Cairo',sans-serif;font-weight:400}
-/* مسافة عشان الهيدر ما يغطي العنوان لما تنتقل */
 #home,#apps,#coming,#contact{scroll-margin-top:80px}
 @media (min-width:1200px), (min-width:1024px) and (min-height:600px){
   .wrap{max-width:1100px}
@@ -61,6 +60,7 @@ h1:after, h2:after{content:"✦ ─── ✦";display:block;font-size:15px;opac
 }
 *{text-shadow:none !important;box-shadow:none !important;animation:none !important;transition:none !important}
 @media(max-width:600px){nav{display:none}nav.open{display:flex;flex-direction:column;position:absolute;top:68px;right:0;left:0;background:#065232;padding:20px}.menu-btn{display:block}h1{font-size:38px}}
+.success-msg{display:none;background:#fff;color:#065232;padding:15px;border-radius:14px;text-align:center;font-weight:800;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -88,29 +88,44 @@ h1:after, h2:after{content:"✦ ─── ✦";display:block;font-size:15px;opac
 <div class="feat"> القرآن الكريم <span></span></div>
 <div class="feat"> الأذكار <span></span></div>
 <div class="feat"> التقويم الهجري <span></span></div>
-<form onsubmit="alert('شكرا! سنعلمك عند الاطلاق.');return false"><input type="email" placeholder="الرجاء كتابة البريد الإلكتروني هنا" required><button class="btn b1" type="submit"> أعلمني عند الإطلاق</button></form>
+
+<!-- فورم أعلمني عند الإطلاق - بيرسل ليك إيميل طوالي -->
+<form id="notifyForm" action="https://formsubmit.co/muslimapps222@gmail.com" method="POST">
+  <input type="email" name="email" placeholder="الرجاء كتابة البريد الإلكتروني هنا" required>
+  <input type="hidden" name="_subject" value="زول جديد سجل في أعلمني عند الإطلاق - Muslim Search">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://ganggame-liard.vercel.app/?thanks=1">
+  <button class="btn b1" type="submit"> أعلمني عند الإطلاق</button>
+</form>
+<div id="thanksMsg" class="success-msg">شكرا! سنعلمك عند الاطلاق.</div>
+
 </div></div>
 <div id="contact"><div class="badge">CONTACT</div><h2>تواصل معنا</h2>
-<div class="item"><div><small>البريد الإلكتروني</small><b>gangegame666@gmail.com</b></div><span></span></div>
-<div class="item"><div><small>قناة يوتيوب</small><b>@MuslimApps</b></div><span></span></div>
+<div class="item"><div><small>البريد الإلكتروني</small><b>muslimapps222@gmail.com</b></div><span>✉️</span></div>
+<div class="item"><div><small>البريد الإلكتروني</small><b>gangegame666@gmail.com</b></div><span>✉️</span></div>
+<div class="item"><div><small>قناة يوتيوب</small><b>@MuslimApps</b></div><span>▶️</span></div>
 <div class="card" style="text-align:center"><div class="qr"><img src="qr.png" alt="QR"></div><h3>قناتنا على واتساب</h3><p class="c">امسح الكود بهاتفك حتى تدخل قناة Muslim Apps على واتساب.</p><a class="btn b1" href="https://whatsapp.com/channel/0029VbDDYsRCMY0NLLee3U0a"> تابع القناة على واتساب</a>
 </div>
 </div>
 <footer><img src="logo.png" alt="Logo"><div style="font-weight:900">Muslim Apps</div><p style="opacity:.7;margin-top:10px">جميع الحقوق محفوظة © Muslim Apps 2026</p></footer>
 <script>
-// لما تضغط على أي خيار في القائمة: ينقلك ليهو طوالي وتختفي القائمة
 document.querySelectorAll('nav a').forEach(function(link){
   link.addEventListener('click', function(){
     document.querySelector('nav').classList.remove('open');
   });
 });
-// تنقل بالريموت لكل التلفزيونات - أسهم + Enter
 document.addEventListener('keydown', function(e){
   const focusable = Array.from(document.querySelectorAll('a,button,input'));
   let i = focusable.indexOf(document.activeElement);
   if(e.key==='ArrowDown' || e.key==='ArrowRight'){ e.preventDefault(); focusable[(i+1)%focusable.length].focus(); }
   if(e.key==='ArrowUp' || e.key==='ArrowLeft'){ e.preventDefault(); focusable[(i-1+focusable.length)%focusable.length].focus(); }
 });
+// لو رجع من الفورم يظهر رسالة شكرا
+if(window.location.search.includes('thanks=1')){
+  document.getElementById('thanksMsg').style.display='block';
+  document.getElementById('coming').scrollIntoView();
+}
 </script>
 </body>
 </html>
