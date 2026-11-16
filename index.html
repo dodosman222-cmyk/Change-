@@ -61,6 +61,7 @@ h1:after, h2:after{content:"✦ ─── ✦";display:block;font-size:15px;opac
 *{text-shadow:none !important;box-shadow:none !important;animation:none !important;transition:none !important}
 @media(max-width:600px){nav{display:none}nav.open{display:flex;flex-direction:column;position:absolute;top:68px;right:0;left:0;background:#065232;padding:20px}.menu-btn{display:block}h1{font-size:38px}}
 .success-msg{display:none;background:#fff;color:#065232;padding:15px;border-radius:14px;text-align:center;font-weight:800;margin-bottom:12px}
+.error-msg{display:none;background:#fff;color:#a00;padding:15px;border-radius:14px;text-align:center;font-weight:800;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -88,18 +89,15 @@ h1:after, h2:after{content:"✦ ─── ✦";display:block;font-size:15px;opac
 <div class="feat"> القرآن الكريم <span></span></div>
 <div class="feat"> الأذكار <span></span></div>
 <div class="feat"> التقويم الهجري <span></span></div>
-
-<!-- هذا الفورم يرسل ايميل الزول مباشرة الى muslimapps222@gmail.com -->
-<form id="notifyForm" action="https://formsubmit.co/muslimapps222@gmail.com" method="POST">
-  <input type="email" name="email" placeholder="الرجاء كتابة البريد الإلكتروني هنا" required>
-  <input type="hidden" name="_subject" value="زول جديد سجل في أعلمني عند الإطلاق - Muslim Search">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://muslimapps.vercel.app/?thanks=1">
-  <button class="btn b1" type="submit"> أعلمني عند الإطلاق</button>
+<form id="notifyForm">
+  <input type="email" id="userEmail" placeholder="الرجاء كتابة البريد الإلكتروني هنا" required>
+  <input type="hidden" name="access_key" value="de7b7fe8-87d9-413e-9cb3-97a25b078202">
+  <input type="hidden" name="subject" value="زول جديد سجل في أعلمني عند الإطلاق - Muslim Search">
+  <input type="hidden" name="from_name" value="Muslim Apps Website">
+  <button class="btn b1" type="submit" id="notifyBtn"> أعلمني عند الإطلاق</button>
 </form>
-<div id="thanksMsg" class="success-msg">شكرا! سنعلمك عند الاطلاق.</div>
-
+<div id="thanksMsg" class="success-msg">شكرا! تم تسجيل بريدك، سنعلمك عند الاطلاق.</div>
+<div id="errorMsg" class="error-msg">حصل خطأ، حاول مرة أخرى.</div>
 </div></div>
 <div id="contact"><div class="badge">CONTACT</div><h2>تواصل معنا</h2>
 <div class="item"><div><small>البريد الإلكتروني</small><b>muslimapps222@gmail.com</b></div><span></span></div>
@@ -120,10 +118,35 @@ document.addEventListener('keydown', function(e){
   if(e.key==='ArrowDown' || e.key==='ArrowRight'){ e.preventDefault(); focusable[(i+1)%focusable.length].focus(); }
   if(e.key==='ArrowUp' || e.key==='ArrowLeft'){ e.preventDefault(); focusable[(i-1+focusable.length)%focusable.length].focus(); }
 });
-if(window.location.search.includes('thanks=1')){
-  document.getElementById('thanksMsg').style.display='block';
-  document.getElementById('coming').scrollIntoView();
-}
+document.getElementById('notifyForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var btn = document.getElementById('notifyBtn');
+  var email = document.getElementById('userEmail').value;
+  btn.disabled = true;
+  btn.textContent = 'جارى الارسال...';
+  document.getElementById('thanksMsg').style.display = 'none';
+  document.getElementById('errorMsg').style.display = 'none';
+  try {
+    var formData = new FormData();
+    formData.append('access_key', 'de7b7fe8-87d9-413e-9cb3-97a25b078202');
+    formData.append('subject', 'زول جديد سجل في أعلمني عند الإطلاق - Muslim Search');
+    formData.append('from_name', 'Muslim Apps Website');
+    formData.append('email', email);
+    formData.append('message', 'ايميل جديد سجل في أعلمني عند الإطلاق: ' + email);
+    var res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+    var data = await res.json();
+    if(data.success){
+      document.getElementById('thanksMsg').style.display = 'block';
+      document.getElementById('userEmail').value = '';
+    } else {
+      document.getElementById('errorMsg').style.display = 'block';
+    }
+  } catch(err){
+    document.getElementById('errorMsg').style.display = 'block';
+  }
+  btn.disabled = false;
+  btn.textContent = ' أعلمني عند الإطلاق';
+});
 </script>
 </body>
 </html>
